@@ -1,0 +1,101 @@
+﻿@page
+@model ProjetoWheels.Pages.Locacoes.CreateModel
+@{
+}
+<h1 class="mb-4">
+    Nova Locação
+</h1>
+
+<div class="card shadow-sm">
+
+    <div class="card-body">
+
+        <div asp-validation-summary="All"
+             class="text-danger">
+        </div>
+
+        <form method="post">
+
+            <div class="mb-3">
+
+                <label asp-for="Locacao.ClienteId"
+                       class="form-label"></label>
+
+                <select asp-for="Locacao.ClienteId"
+                        asp-items="Model.Clientes"
+                        class="form-select">
+
+                    <option value="">
+                        Selecione um cliente
+                    </option>
+
+                </select>
+
+            </div>
+
+            <div class="mb-3">
+
+                <label asp-for="Locacao.BicicletaId"
+                       class="form-label"></label>
+
+                <select asp-for="Locacao.BicicletaId"
+                        asp-items="Model.Bicicletas"
+                        class="form-select">
+
+                    <option value="">
+                        Selecione uma bicicleta
+                    </option>
+
+                </select>
+
+            </div>
+
+            <div class="mb-3">
+
+                <label asp-for="Locacao.DataInicio"
+                       class="form-label"></label>
+
+                <input asp-for="Locacao.DataInicio"
+                       type="date"
+                       class="form-control" />
+
+            </div>
+
+            <div class="mb-3">
+
+                <label asp-for="Locacao.DataFimPrevista"
+                       class="form-label"></label>
+
+                <input asp-for="Locacao.DataFimPrevista"
+                       type="date"
+                       class="form-control" />
+
+            </div>
+
+            <div class="mb-3">
+
+                <label asp-for="Locacao.DepositoPago"
+                       class="form-label"></label>
+
+                <input asp-for="Locacao.DepositoPago"
+                       type="number"
+                       step="0.01"
+                       class="form-control" />
+
+            </div>
+
+            <button type="submit"
+                    class="btn btn-primary">
+                Registrar Locação
+            </button>
+
+            <a asp-page="Index"
+               class="btn btn-secondary">
+                Voltar
+            </a>
+
+        </form>
+
+    </div>
+
+</div>

@@ -1,0 +1,80 @@
+﻿@page
+@using ProjetoWheels.Models
+@model ProjetoWheels.Pages.Bicicletas.EditModel
+@{
+}
+<h1 class="mb-4">Editar Bicicleta</h1>
+
+<div class="card shadow-sm">
+    <div class="card-body">
+
+        <form method="post">
+
+            <input type="hidden" asp-for="Bicicleta.Id" />
+
+            <div class="mb-3">
+                <label asp-for="Bicicleta.Marca" class="form-label"></label>
+
+                <input asp-for="Bicicleta.Marca" class="form-control" />
+
+                <span asp-validation-for="Bicicleta.Marca"
+                      class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Bicicleta.Tipo" class="form-label"></label>
+
+                <input asp-for="Bicicleta.Tipo" class="form-control" />
+
+                <span asp-validation-for="Bicicleta.Tipo"
+                      class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Bicicleta.Tamanho" class="form-label"></label>
+
+                <input asp-for="Bicicleta.Tamanho" class="form-control" />
+                <span asp-validation-for="Bicicleta.Tamanho"
+                      class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Bicicleta.ValorDiaria" class="form-label"></label>
+
+                <input asp-for="Bicicleta.ValorDiaria" 
+                type="number"
+                step="0.01" 
+                class="form-control" />
+
+                <span asp-validation-for="Bicicleta.ValorDiaria"
+                      class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Bicicleta.Status" class="form-label"></label>
+
+                <select asp-for="Bicicleta.Status"
+                        class="form-select"
+                        asp-items="Html.GetEnumSelectList<StatusBicicleta>()">
+                </select>
+
+                <span asp-validation-for="Bicicleta.Status"
+                      class="text-danger"></span>
+            </div>
+
+            <button type="submit" class="btn btn-warning">
+                Salvar Alterações
+            </button>
+
+            <a asp-page="Index" class="btn btn-secondary">
+                Voltar
+            </a>
+
+        </form>
+
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

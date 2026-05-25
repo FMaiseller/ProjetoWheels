@@ -1,0 +1,179 @@
+﻿@page
+@model ProjetoWheels.Pages.Relatorios.IndexModel
+@{
+}
+<h1 class="mb-4">
+    Relatórios
+</h1>
+<form method="get" class="mb-4">
+
+    <div class="row">
+
+        <div class="col-md-3">
+
+            <select name="periodo"
+                    class="form-select"
+                    onchange="this.form.submit()">
+
+                <option value="Todos"
+                        selected="@(Model.Relatorio.PeriodoSelecionado == "Todos")">
+
+                    Todos
+
+                </option>
+
+                <option value="Hoje"
+                        selected="@(Model.Relatorio.PeriodoSelecionado == "Hoje")">
+
+                    Hoje
+
+                </option>
+
+                <option value="Semana"
+                        selected="@(Model.Relatorio.PeriodoSelecionado == "Semana")">
+
+                    Últimos 7 dias
+
+                </option>
+
+                <option value="Mes"
+                        selected="@(Model.Relatorio.PeriodoSelecionado == "Mes")">
+
+                    Últimos 30 dias
+
+                </option>
+
+            </select>
+
+        </div>
+
+    </div>
+
+</form>
+<div class="row g-4">
+
+    <div class="col-md-3">
+
+        <div class="card text-white bg-success shadow">
+
+            <div class="card-body">
+
+                <h5 class="card-title">
+                    Receita Total
+                </h5>
+
+                <h2>
+                    @Model.Relatorio.ReceitaTotal.ToString("C")
+                </h2>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="col-md-3">
+
+        <div class="card text-white bg-primary shadow">
+
+            <div class="card-body">
+
+                <h5 class="card-title">
+                    Total de Locações
+                </h5>
+
+                <h2>
+                    @Model.Relatorio.TotalLocacoes
+                </h2>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="col-md-3">
+
+        <div class="card text-dark bg-warning shadow">
+
+            <div class="card-body">
+
+                <h5 class="card-title">
+                    Bikes Disponíveis
+                </h5>
+
+                <h2>
+                    @Model.Relatorio.BicicletasDisponiveis
+                </h2>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="col-md-3">
+
+        <div class="card text-white bg-danger shadow">
+
+            <div class="card-body">
+
+                <h5 class="card-title">
+                    Bikes Alugadas
+                </h5>
+
+                <h2>
+                    @Model.Relatorio.BicicletasAlugadas
+                </h2>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div class="row mt-4 g-4">
+
+    <div class="col-md-6">
+
+        <div class="card shadow">
+
+            <div class="card-body">
+
+                <h4>
+                    Cliente com Mais Locações
+                </h4>
+
+                <p class="fs-4">
+                    @Model.Relatorio.ClienteMaisLocacoes
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="col-md-6">
+
+        <div class="card shadow">
+
+            <div class="card-body">
+
+                <h4>
+                    Bicicleta Mais Alugada
+                </h4>
+
+                <p class="fs-4">
+                    @Model.Relatorio.BicicletaMaisAlugada
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

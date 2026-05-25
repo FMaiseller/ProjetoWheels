@@ -1,0 +1,93 @@
+﻿@page
+@using ProjetoWheels.Models
+@model ProjetoWheels.Pages.Bicicletas.IndexModel
+@{
+}
+
+<h1 class="mb-4">
+    Bicicletas
+</h1>
+
+<a asp-page="Create"
+   class="btn btn-primary mb-3">
+    Nova Bicicleta
+</a>
+
+<table class="table table-hover align-middle">
+
+    <thead>
+        <tr>
+            <th>Código</th>
+            <th>Marca</th>
+            <th>Tipo</th>
+            <th>Tamanho</th>
+            <th>Diária</th>
+            <th>Status</th>
+            <th></th>
+        </tr>
+    </thead>
+
+    <tbody>
+
+        @foreach (var item in Model.Bicicletas)
+        {
+            <tr>
+                <td>@item.Id</td>
+
+                <td>@item.Marca</td>
+
+                <td>@item.Tipo</td>
+
+                <td>@item.Tamanho</td>
+
+                <td>
+                    @item.ValorDiaria.ToString("C")
+                </td>
+
+                <td>
+
+                    @if (item.Status == StatusBicicleta.Disponivel)
+                    {
+                        <span class="badge bg-success">
+                            Disponível
+                        </span>
+                    }
+
+                    else if (item.Status == StatusBicicleta.Alugada)
+                    {
+                        <span class="badge bg-danger">
+                            Alugada
+                        </span>
+                    }
+
+					else if (item.Status == StatusBicicleta.Manutencao)
+                    {
+                        <span class="badge bg-warning text-dark">
+                            Manutenção
+                        </span>
+                    }
+
+                </td>
+
+                <td>
+
+                    <a asp-page="Edit"
+                       asp-route-id="@item.Id"
+                       class="btn btn-warning btn-sm">
+                        Editar
+                    </a>
+
+                    <a asp-page="Delete"
+                       asp-route-id="@item.Id"
+                       class="btn btn-danger btn-sm">
+                        Excluir
+                    </a>
+
+                </td>
+
+            </tr>
+        }
+
+    </tbody>
+
+</table>

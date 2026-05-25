@@ -1,0 +1,82 @@
+﻿@page
+@using ProjetoWheels.Models
+@model ProjetoWheels.Pages.Bicicletas.CreateModel
+@{
+}
+<h1 class="mb-4">
+    Nova Bicicleta
+</h1>
+
+<div class="card shadow-sm">
+
+    <div class="card-body">
+
+        <form method="post">
+
+            <div class="mb-3">
+
+                <label asp-for="Bicicleta.Marca"
+                       class="form-label"></label>
+
+                <input asp-for="Bicicleta.Marca"
+                       class="form-control" />
+
+            </div>
+
+            <div class="mb-3">
+
+                <label asp-for="Bicicleta.Tipo"
+                       class="form-label"></label>
+
+                <input asp-for="Bicicleta.Tipo"
+                       class="form-control" />
+
+            </div>
+
+            <div class="mb-3">
+
+                <label asp-for="Bicicleta.Tamanho"
+                       class="form-label"></label>
+
+                <input asp-for="Bicicleta.Tamanho"
+                       class="form-control" />
+
+            </div>
+
+            <div class="mb-3">
+
+                <label asp-for="Bicicleta.ValorDiaria"
+                       class="form-label"></label>
+
+                <input asp-for="Bicicleta.ValorDiaria"
+                       class="form-control" />
+
+            </div>
+
+            <div class="mb-3">
+
+                <label asp-for="Bicicleta.Status"
+                       class="form-label"></label>
+
+                <select asp-for="Bicicleta.Status"
+                        class="form-select"
+                        asp-items="Html.GetEnumSelectList<StatusBicicleta>()">
+                </select>
+
+            </div>
+
+            <button type="submit"
+                    class="btn btn-primary">
+                Salvar
+            </button>
+
+            <a asp-page="Index"
+               class="btn btn-secondary">
+                Voltar
+            </a>
+
+        </form>
+
+    </div>
+
+</div>

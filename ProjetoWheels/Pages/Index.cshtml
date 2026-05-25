@@ -1,0 +1,154 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="p-5 mb-4 mt-4 bg-primary text-white rounded-4 shadow">
+
+    <div class="container-fluid py-3">
+
+        <h1 class="display-4 fw-bold">
+            Projeto Wheels
+        </h1>
+
+        <p class="fs-5">
+
+            Sistema de gerenciamento de locação de bicicletas.
+
+        </p>
+
+        <a asp-page="/Locacoes/Create"
+           class="btn btn-light btn-lg">
+
+            Nova Locação
+
+        </a>
+
+    </div>
+
+</div>
+
+<div class="row g-4">
+
+    <div class="col-md-3">
+
+        <div class="card text-white bg-success shadow h-100">
+
+            <div class="card-body">
+
+                <h5 class="card-title">
+                    Clientes
+                </h5>
+
+                <h1>
+                    @Model.TotalClientes
+                </h1>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="col-md-3">
+
+        <div class="card text-white bg-primary shadow h-100">
+
+            <div class="card-body">
+
+                <h5 class="card-title">
+                    Bikes Disponíveis
+                </h5>
+
+                <h1>
+                    @Model.BikesDisponiveis
+                </h1>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="col-md-3">
+
+        <div class="card text-white bg-danger shadow h-100">
+
+            <div class="card-body">
+
+                <h5 class="card-title">
+                    Locações Ativas
+                </h5>
+
+                <h1>
+                    @Model.LocacoesAtivas
+                </h1>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="col-md-3">
+
+        <div class="card text-white bg-dark shadow h-100">
+
+            <div class="card-body">
+
+                <h5 class="card-title">
+                    Receita Total
+                </h5>
+
+                <h3>
+                    @Model.ReceitaTotal.ToString("C")
+                </h3>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div class="mt-5">
+
+    <h3 class="mb-4">
+        Acesso Rápido
+    </h3>
+
+    <div class="d-flex gap-3 flex-wrap">
+
+        <a asp-page="/Clientes/Index"
+           class="btn btn-outline-primary btn-lg">
+
+            Clientes
+
+        </a>
+
+        <a asp-page="/Bicicletas/Index"
+           class="btn btn-outline-success btn-lg">
+
+            Bicicletas
+
+        </a>
+
+        <a asp-page="/Locacoes/Index"
+           class="btn btn-outline-danger btn-lg">
+
+            Locações
+
+        </a>
+
+        <a asp-page="/Relatorios/Index"
+           class="btn btn-outline-dark btn-lg">
+
+            Relatórios
+
+        </a>
+
+    </div>
+
+</div>

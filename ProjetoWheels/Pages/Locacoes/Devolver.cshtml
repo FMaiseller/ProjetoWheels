@@ -1,0 +1,72 @@
+﻿@page
+@model ProjetoWheels.Pages.Locacoes.DevolverModel
+@{
+}
+<h1 class="mb-4 text-success">
+    Devolver Bicicleta
+</h1>
+
+<div class="card shadow-sm">
+
+    <div class="card-body">
+
+        <dl class="row">
+
+            <dt class="col-sm-3">
+                Cliente
+            </dt>
+
+            <dd class="col-sm-9">
+                @Model.Locacao.Cliente.Nome
+            </dd>
+
+            <dt class="col-sm-3">
+                Bicicleta
+            </dt>
+
+            <dd class="col-sm-9">
+                @Model.Locacao.Bicicleta.Marca
+            </dd>
+
+            <dt class="col-sm-3">
+                Valor Total
+            </dt>
+
+            <dd class="col-sm-9">
+                @Model.Locacao.ValorTotal.ToString("C")
+            </dd>
+
+            <dt class="col-sm-3">
+                Data Prevista
+            </dt>
+
+            <dd class="col-sm-9">
+                @Model.Locacao.DataFimPrevista.ToShortDateString()
+            </dd>
+
+        </dl>
+
+        <form method="post">
+
+            <input type="hidden"
+                   asp-for="Locacao.Id" />
+
+            <button type="submit"
+                    class="btn btn-success">
+
+                Confirmar Devolução
+
+            </button>
+
+            <a asp-page="Index"
+               class="btn btn-secondary">
+
+                Cancelar
+
+            </a>
+
+        </form>
+
+    </div>
+
+</div>
