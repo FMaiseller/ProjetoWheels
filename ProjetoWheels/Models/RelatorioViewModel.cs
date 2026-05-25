@@ -2,7 +2,10 @@
 
 public class RelatorioViewModel
 {
-    public string PeriodoSelecionado { get; set; } = "Todos";
+    public DateTime? DataInicio { get; set; }
+
+    public DateTime? DataFim { get; set; }
+
     public decimal ReceitaTotal { get; set; }
 
     public int TotalLocacoes { get; set; }

@@ -5,52 +5,32 @@
 <h1 class="mb-4">
     Relatórios
 </h1>
-<form method="get" class="mb-4">
 
-    <div class="row">
+<form method="get">
 
-        <div class="col-md-3">
-
-            <select name="periodo"
-                    class="form-select"
-                    onchange="this.form.submit()">
-
-                <option value="Todos"
-                        selected="@(Model.Relatorio.PeriodoSelecionado == "Todos")">
-
-                    Todos
-
-                </option>
-
-                <option value="Hoje"
-                        selected="@(Model.Relatorio.PeriodoSelecionado == "Hoje")">
-
-                    Hoje
-
-                </option>
-
-                <option value="Semana"
-                        selected="@(Model.Relatorio.PeriodoSelecionado == "Semana")">
-
-                    Últimos 7 dias
-
-                </option>
-
-                <option value="Mes"
-                        selected="@(Model.Relatorio.PeriodoSelecionado == "Mes")">
-
-                    Últimos 30 dias
-
-                </option>
-
-            </select>
-
-        </div>
-
+    <div>
+        <h4>Adicionar Filtro</h4>
+        <label>Data Inicial</label>
+        <input type="date"
+               name="dataInicio"
+               value="@Model.Relatorio.DataInicio?.ToString("yyyy-MM-dd")" />
     </div>
 
+    <div>
+        <label>Data Final</label>
+        <input type="date"
+               name="dataFim"
+               value="@Model.Relatorio.DataFim?.ToString("yyyy-MM-dd")" />
+    </div>
+
+    <button type="submit" class="col-md-1 mt-4 btn btn-outline-primary btn-lg">
+        
+        Filtrar
+    </button>
+
 </form>
-<div class="row g-4">
+
+<div class="mt-4 row g-4">
 
     <div class="col-md-3">
 

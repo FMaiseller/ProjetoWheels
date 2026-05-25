@@ -16,37 +16,26 @@ namespace ProjetoWheels.Pages.Relatorios
 
         public RelatorioViewModel Relatorio { get; set; } = new();
 
-        public void OnGet(string periodo = "Todos")
+        public void OnGet(DateTime? dataInicio, DateTime? dataFim)
         {
-            Relatorio.PeriodoSelecionado = periodo;
+            Relatorio.DataInicio = dataInicio;
+            Relatorio.DataFim = dataFim;
 
             var locacoes = _context.Locacoes.AsQueryable();
 
-            DateTime hoje = DateTime.Today;
-
-            if (periodo == "Hoje")
+            if (dataInicio.HasValue)
             {
-                locacoes = locacoes
-                    .Where(l => l.DataInicio.Date == hoje);
+                locacoes = locacoes.Where(l =>
+                    l.DataInicio >= dataInicio.Value);
             }
 
-            else if (periodo == "Semana")
+            if (dataFim.HasValue)
             {
-                DateTime inicioSemana =
-                    hoje.AddDays(-7);
-
-                locacoes = locacoes
-                    .Where(l => l.DataInicio >= inicioSemana);
+                locacoes = locacoes.Where(l =>
+                    l.DataInicio < dataFim.Value.AddDays(1));
             }
 
-            else if (periodo == "Mes")
-            {
-                DateTime inicioMes =
-                    hoje.AddDays(-30);
-
-                locacoes = locacoes
-                    .Where(l => l.DataInicio >= inicioMes);
-            }
+            var listaLocacoes = locacoes.ToList();
 
             Relatorio.ReceitaTotal =
                 locacoes
