@@ -2,16 +2,17 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using ProjetoWheels.Data;
 using ProjetoWheels.Models;
+using ProjetoWheels.Services;
 
 namespace ProjetoWheels.Pages
 {
     public class IndexModel : PageModel
     {
-        private readonly AppDbContext _context;
+        private readonly IDashBoardService _dashboardService;
 
-        public IndexModel(AppDbContext context)
+        public IndexModel(IDashBoardService dashboardService)
         {
-            _context = context;
+            _dashboardService = dashboardService;
         }
 
         public int TotalClientes { get; set; }
@@ -24,22 +25,10 @@ namespace ProjetoWheels.Pages
 
         public void OnGet()
         {
-            TotalClientes =
-                _context.Clientes.Count();
-
-            BikesDisponiveis =
-                _context.Bicicletas.Count(b =>
-                    b.Status ==
-                    StatusBicicleta.Disponivel);
-
-            LocacoesAtivas =
-                _context.Locacoes.Count(l =>
-                    l.DataDevolucao == null);
-
-            ReceitaTotal =
-                _context.Locacoes
-                    .ToList()
-                    .Sum(l => l.ValorTotal + l.TaxaAtraso);
+            TotalClientes = _dashboardService.TotalClientes();
+            BikesDisponiveis = _dashboardService.BikesDisponiveis();
+            LocacoesAtivas = _dashboardService.LocacoesAtivas();
+            ReceitaTotal = _dashboardService.ReceitaTotal();
         }
     }
 }
