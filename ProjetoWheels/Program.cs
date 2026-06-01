@@ -1,5 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using ProjetoWheels.Data;
+using ProjetoWheels.Services;
+using ProjetoWheels.Services.Interfaces;
 
 namespace ProjetoWheels
 {
@@ -15,6 +17,13 @@ namespace ProjetoWheels
             builder.Services.AddDbContext<AppDbContext>(options =>
             options.UseSqlServer(
             builder.Configuration.GetConnectionString("DefaultConnection")));
+
+            builder.Services.AddScoped<
+            IRelatorioService,
+            RelatorioService>();
+            builder.Services.AddScoped<
+            IDashBoardService,
+            DashBoardService>();
 
             var app = builder.Build();
 

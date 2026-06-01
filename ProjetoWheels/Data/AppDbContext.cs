@@ -15,4 +15,13 @@ public class AppDbContext : DbContext
     public DbSet<Bicicleta> Bicicletas { get; set; }
 
     public DbSet<Locacao> Locacoes { get; set; }
+
+
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        base.OnModelCreating(modelBuilder);
+
+        modelBuilder.ApplyConfigurationsFromAssembly(
+            typeof(AppDbContext).Assembly);
+    }
 }
