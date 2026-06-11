@@ -21,14 +21,9 @@ namespace ProjetoWheels.Pages
 
         public int LocacoesAtivas { get; set; }
 
-        public decimal ReceitaTotal { get; set; }
 
         public void OnGet()
         {
-            TotalClientes = _dashboardService.TotalClientes();
-            BikesDisponiveis = _dashboardService.BikesDisponiveis();
-            LocacoesAtivas = _dashboardService.LocacoesAtivas();
-            ReceitaTotal = _dashboardService.ReceitaTotal();
         }
     }
 }
