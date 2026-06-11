@@ -31,7 +31,6 @@ O principal objetivo é substituir processos manuais por uma solução centraliz
 
 - [Funcionalidades](#funcionalidades)
 - [Telas do Sistema](#telas-do-sistema)
-- [Arquitetura](#arquitetura)
 - [Tecnologias Utilizadas](#tecnologias-utilizadas)
 - [Regras de Negócio](#regras-de-negócio)
 - [Como Executar](#como-executar)
@@ -49,7 +48,6 @@ O principal objetivo é substituir processos manuais por uma solução centraliz
 | Bicicletas | Cadastro, edição, exclusão e controle de status |
 | Locações | Registro de aluguel e cálculo automático |
 | Devoluções | Controle de devoluções e multas por atraso |
-| Dashboard | Indicadores e métricas gerais |
 | Relatórios | Receita, locações e estatísticas |
 
 ---
@@ -67,41 +65,6 @@ O principal objetivo é substituir processos manuais por uma solução centraliz
 <p align="center">
   <img src="ProjetoWheels/wwwroot/images/Relatorio.png" width="900">
 </p>
-
----
-
-## Arquitetura
-
-```text
-ProjetoWheels
-│
-├── Data
-│   ├── AppDbContext.cs
-│   ├── DbInitializer.cs
-│   └── Migrations
-│
-├── Models
-│   ├── Cliente.cs
-│   ├── Bicicleta.cs
-│   ├── Locacao.cs
-│   └── RelatorioViewModel.cs
-│
-├── Services
-│   ├── DashboardService.cs
-│   └── RelatorioService.cs
-│
-├── Pages
-│   ├── Clientes
-│   ├── Bicicletas
-│   ├── Locacoes
-│   ├── Dashboard
-│   └── Relatorios
-│
-├── wwwroot
-│
-├── Program.cs
-└── appsettings.json
-```
 
 ---
 
@@ -189,7 +152,6 @@ dotnet run
 
 - [x] Cadastro de clientes
 - [x] Edição de clientes
-- [x] Exclusão de clientes
 - [x] Cadastro de bicicletas
 - [x] Edição de bicicletas
 - [x] Exclusão de bicicletas

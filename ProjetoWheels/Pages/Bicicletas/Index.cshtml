@@ -77,12 +77,15 @@
                         Editar
                     </a>
 
-                    <a asp-page="Delete"
-                       asp-route-id="@item.Id"
-                       class="btn btn-danger btn-sm">
-                        Excluir
-                    </a>
-
+                    @if (item.Status != StatusBicicleta.Alugada)
+                    {
+                        <a asp-page="Delete"
+                        asp-route-id="@item.Id"
+                        class="btn btn-danger btn-sm">
+                            Excluir
+                        </a>
+                    }
+                    
                 </td>
 
             </tr>
