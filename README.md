@@ -29,15 +29,15 @@ O principal objetivo é substituir processos manuais por uma solução centraliz
 
 ## Índice
 
-- [Funcionalidades](#-funcionalidades)
-- [Telas do Sistema](#️-telas-do-sistema)
-- [Arquitetura](#️-arquitetura)
-- [Tecnologias Utilizadas](#️-tecnologias-utilizadas)
-- [Regras de Negócio](#-regras-de-negócio)
-- [Como Executar](#-como-executar)
-- [Funcionalidades Implementadas](#-funcionalidades-implementadas)
-- [Objetivos Acadêmicos](#-objetivos-acadêmicos)
-- [Autor](#-autor)
+- [Funcionalidades](#funcionalidades)
+- [Telas do Sistema](#telas-do-sistema)
+- [Arquitetura](#arquitetura)
+- [Tecnologias Utilizadas](#tecnologias-utilizadas)
+- [Regras de Negócio](#regras-de-negócio)
+- [Como Executar](#como-executar)
+- [Funcionalidades Implementadas](#funcionalidades-implementadas)
+- [Objetivos Acadêmicos](#objetivos-acadêmicos)
+- [Autor](#autor)
 
 ---
 
@@ -58,15 +58,11 @@ O principal objetivo é substituir processos manuais por uma solução centraliz
 
 ### Tela Inicial
 
-```text
-images/TelaInicial.png
-```
+![Tela Inicial](images/TelaInicial.png)
 
-### Relatórios
+### Relatório
 
-```text
-images/Relatorio.png
-```
+![Relatório](images/Relatorio.png)
 
 ---
 
