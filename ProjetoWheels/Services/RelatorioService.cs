@@ -86,6 +86,9 @@ namespace ProjetoWheels.Services
             relatorio.BicicletaMaisAlugada =
                 bicicletaMaisAlugada?.Marca;
 
+            relatorio.TotalClientes =
+                _context.Clientes.Count();
+
             return relatorio;
         }
     }

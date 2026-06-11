@@ -21,9 +21,6 @@ namespace ProjetoWheels
             builder.Services.AddScoped<
             IRelatorioService,
             RelatorioService>();
-            builder.Services.AddScoped<
-            IDashBoardService,
-            DashBoardService>();
 
             var app = builder.Build();
 

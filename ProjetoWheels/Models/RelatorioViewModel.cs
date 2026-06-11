@@ -17,4 +17,6 @@ public class RelatorioViewModel
     public string ClienteMaisLocacoes { get; set; } = "";
 
     public string BicicletaMaisAlugada { get; set; } = "";
+    public int TotalClientes { get; set; }
+
 }

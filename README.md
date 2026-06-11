@@ -58,11 +58,15 @@ O principal objetivo é substituir processos manuais por uma solução centraliz
 
 ### Tela Inicial
 
-![Tela Inicial](images/TelaInicial.png)
+<p align="center">
+  <img src="ProjetoWheels/wwwroot/images/TelaInicial.png" width="900">
+</p>
 
 ### Relatório
 
-![Relatório](images/Relatorio.png)
+<p align="center">
+  <img src="ProjetoWheels/wwwroot/images/Relatorio.png" width="900">
+</p>
 
 ---
 
